@@ -9,10 +9,12 @@ if (isset($_POST["name"]) && isset($_POST["password"])) {
 	// if the username is empty
 	if ($_POST["name"] == "") {
 		$name_error = "Username cannot be empty";
+		header("Location: ../index.php?login=failed&error=$name_error");
 	}
 	// if password is empty
 	if ($_POST["password"] == "") {
 		$password_error = "Password cannot be empty";
+		header("Location: ../index.php?login=failed&error=$password_error");
 	}
 
 	/* when user entered both username and password
@@ -40,6 +42,7 @@ if (isset($_POST["name"]) && isset($_POST["password"])) {
 
 		} else {
 			$login_error = "Incorrect username or password...";
+			header("Location: ../index.php?login=failed&error=$login_error");
 		}
 	}
 

@@ -1,6 +1,13 @@
 <?php
 include_once "includes/header.php";
-include_once "includes/dbconnection.php";
+include_once "includes/login.php";
+
+// check whether a session has started
+if (session_status() === PHP_SESSION_NONE)
+{
+    session_start();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -12,17 +19,15 @@ include_once "includes/dbconnection.php";
 <body>
 <form method = "post" action = "includes/login.php">
 Username: &nbsp; <input type = "text" name = "name" placeholder = "username">
-<?php echo isset($name_error)? "*".$name_error : "";?><br>
-
-
+<br>
 Password:&nbsp;&nbsp;&nbsp;
 <input type = "password" name = "password" placeholder = "password">
-<?php echo isset($password_error )? "*".$password_error : "";?><br><br><br>
+<br>
 <input type = "submit" value = "Login">
 </form>
 
-<?php echo isset($login_error )? "*".$login_error : "";?>
-
+<br>
+<?php echo isset($_GET["error"] )? "*".$_GET["error"] : "";?>
 </body>
 </html>
 
