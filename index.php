@@ -1,5 +1,6 @@
 <?php
-    include_once "includes/dbconnection.php";
+include_once "includes/header.php";
+include_once "includes/dbconnection.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
     <title>Vehicle Database Project</title>
 </head>
 <body>
-<form method = "post" action = "login.php">
+<form method = "post" action = "includes/login.php">
 Username: &nbsp; <input type = "text" name = "name" placeholder = "username">
 <?php echo isset($name_error)? "*".$name_error : "";?><br>
 
