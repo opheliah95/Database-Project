@@ -1,3 +1,7 @@
+<?php
+    include_once "includes/dbconnection.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
