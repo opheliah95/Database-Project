@@ -5,5 +5,5 @@ $dbUsername = "root";
 $dbPassword= "";
 $dbName = "VehicleDB";
 
-$conn = mysql_connect($dbServername, $dbUsername, $dbPassword, $dbName); // connect to localhost
+$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); // connect to localhost
 ?>
