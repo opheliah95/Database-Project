@@ -1,0 +1,5 @@
+{
+  "MAIN_CSS":  "../../style/style.css",
+  "HEADER": "../PHP/login/header.php",
+  "LOGIN": "../PHP/login/login.php"
+}
