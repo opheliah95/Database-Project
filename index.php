@@ -1,13 +1,6 @@
 <?php
 include_once "includes/header.php";
 include_once "includes/login.php";
-
-// check whether a session has started
-if (session_status() === PHP_SESSION_NONE)
-{
-    session_start();
-}
-
 ?>
 
 <!DOCTYPE html>
