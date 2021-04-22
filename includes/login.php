@@ -37,7 +37,7 @@ if (isset($_POST["name"]) && isset($_POST["password"])) {
 			$_SESSION["user"] = $username;
 			$_SESSION["role"] = $row["Officer_Role"];
 			$_SESSION["id"] = $row["Officer_ID"];
-			header("location: userpage.php");
+			header("location: User/userpage.php");
 			exit;
 
 		} else {
