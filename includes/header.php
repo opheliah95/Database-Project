@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="../style/style.css">
 
 <?php
-echo "<h1> Police Traffic Record </h1>";
 
 if (isset($_SESSION["user"]) && isset($_SESSION["id"]) && isset($_SESSION["role"])) {
   // if user login

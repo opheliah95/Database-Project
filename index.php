@@ -1,15 +1,11 @@
-<?php
-include_once "includes/header.php";
-include_once "includes/login.php";
-?>
-
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="style/style.css">
 <head>
-    <title>Vehicle Database Project</title>
+
 </head>
 <body>
+<h1> Traffic Record Database</h1>
 <form method = "post" action = "includes/login.php">
 Username: &nbsp; <input type = "text" name = "name" placeholder = "username">
 <br>
