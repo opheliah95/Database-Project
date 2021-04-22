@@ -1,9 +1,18 @@
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="../style/style.css">
-
 <?php
 
+function get_css_path()
+{
+    $css=' <link href="../../style/style.css" rel="stylesheet">';
+    echo $css;
+}
+
+?>
+
+
+
+<?php
+// include css path
+get_css_path();
 if (isset($_SESSION["user"]) && isset($_SESSION["id"]) && isset($_SESSION["role"])) {
   // if user login
   if ($_SESSION["role"] == "user") {
@@ -40,4 +49,3 @@ if (isset($_SESSION["user"]) && isset($_SESSION["id"]) && isset($_SESSION["role"
 
 ?>
 
-</html>
