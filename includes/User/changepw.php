@@ -68,10 +68,10 @@ include_once("../functions.php");
 
 					// check if change is successful
 					if ($result) {
-						header("location: success.php");
+						header("location: ../States/success.php");
 						exit;
 					} else {
-						header("location: fail.php");
+						header("location: ../States/fail.php");
 						exit;
 					}
 
@@ -85,7 +85,7 @@ include_once("../functions.php");
 
 
 			// redirect user
-			header("Location:changepw.php?" , true, 303);
+			header("Location: changepw.php?" , true, 303);
 			exit;
 		}
 
