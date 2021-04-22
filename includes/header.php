@@ -2,14 +2,29 @@
 
 function get_css_path()
 {
-    $css=' <link href="../../style/style.css" rel="stylesheet">';
+    $css=' <link href="/Database-Project/style/style.css" rel="stylesheet">';
     echo $css;
+}
+
+function get_js_path()
+{
+    $js_path = '<script type="text/javascript" src="/Database-Project/scripts/helper.js"></script>';
+    echo $js_path;
 }
 
 // this function will redirect user to homepage
 function refresh_to_homepage($time = 5){
-    $home = "../index.php";
-    echo "This page will refresh in " .$time. " seconds";
+
+    $home = "/Database-Project/index.php";
+    echo "<span id = 'timer'>Redirecting...</span>";
+
+    //includes the countdown function and start countdown
+    get_js_path();
+    echo '<script>',
+         'countdown();',
+         '</script>';
+
+    // time out to home page
     header("refresh:$time; url=$home");
 }
 
