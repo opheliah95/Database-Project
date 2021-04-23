@@ -67,7 +67,7 @@ if (isset($_GET["search"])) {
 ?>
 <br>
 
-<form method = "GET" action = "process_add.php">
+<form method = "GET" action = "../../Actions/Add/process_add.php">
 <input type = "submit" name = "people" value = "Add new people">
 <input type = "submit" name = "cancel" value = "Cancel">
 </form>
