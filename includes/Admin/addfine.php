@@ -15,7 +15,9 @@ include_once($include_dir."Helper/path_handler.php");
 // directory path for process_add.php
 $add_fine_path = "Actions/Add/process_fine.php";
 $process_fine = realpath($include_dir.$add_fine_path);
-echo $process_fine;
+// url path for incident
+$select_incident_url = return_url_path("Entities/Incident/select_incident.php");
+echo $select_incident_url;
 ?>
 
 <?php
@@ -68,7 +70,7 @@ if (check_session())
 		echo "<input type = 'hidden' name = 'id' value = '$id'>";
 		echo "<input type = 'hidden' name = 'des' value = '$txt'>";
 		echo "<br>";
-		echo "<a href = 'select_incident.php?words=$txt&inci=$id' id = 'rightalign'> Select Incident </a>";
+		echo "<a href = '$select_incident_url?words=$txt&inci=$id' id = 'rightalign'> Select Incident </a>";
 		echo "<input type = 'submit' name = 'submit' value = 'Save'>";
 		echo "&nbsp;&nbsp;"; 
 		echo "<input type = 'submit' name = 'cancel' value = 'Cancel'>";

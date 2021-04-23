@@ -6,7 +6,7 @@ $include_dir = explode($parent_folder, __DIR__)[0];
 // includes path_handler
 include_once($include_dir."Helper\path_handler.php");
 $user_dir= return_url_path("/User/userpage.php");
-
+$addfine_url_dir= return_url_path("/Admin/addfine.php");
 ?>
 
 <?php
@@ -31,7 +31,7 @@ if (count($_POST) > 0) {
 		}
 	}
 	
-	header("Location: addfine.php?iid=$incident&des=$txt", true, 303);
+	header("Location: $addfine_url_dir?iid=$incident&des=$txt", true, 303);
     exit;
 }
 ?>
