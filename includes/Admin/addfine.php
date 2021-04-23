@@ -17,7 +17,6 @@ $add_fine_path = "Actions/Add/process_fine.php";
 $process_fine = realpath($include_dir.$add_fine_path);
 // url path for incident
 $select_incident_url = return_url_path("Entities/Incident/select_incident.php");
-echo $select_incident_url;
 ?>
 
 <?php

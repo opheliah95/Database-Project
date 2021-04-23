@@ -2,18 +2,20 @@
 
 <?php
 // get include path
-$parent_folder = "Admin";
+$parent_folder = "Entities";
 $include_dir = explode($parent_folder, __DIR__)[0];
 $self = $_SERVER['PHP_SELF'];
 ?>
 
 <?php
 // added db connection
-include_once("../Helper/connection_handler.php");
+$connection_handler_path = realpath($include_dir."Helper/connection_handler.php");
+$path_handler_path = realpath($include_dir."Helper/path_handler.php");
+include_once($connection_handler_path);
 
 // includes function file and path_handler
 include_once($include_dir."functions.php");
-include_once($include_dir."Helper/path_handler.php");
+include_once($path_handler_path);
 
 // url for process_add.php
 $process_add = return_project_path()."Actions/Add/process_add.php";
@@ -22,7 +24,7 @@ $add_fine = return_project_path()."Admin/addfine.php";
 ?>
 
 <?php
-include_once("../Helper/session_handler.php");
+include_once($include_dir."/Helper/session_handler.php");
 // if session variables are destroyed -- then leave the page
 if (check_session())
 {
@@ -132,10 +134,7 @@ if (isset($_GET["submit"])) {
 						}
 						
 						
-					} else {
-						echo "No report about ". $pname. " is found <br>";
-					}
-					
+					} 
 				}
 				
 			} else {
