@@ -10,7 +10,7 @@ include_once($include_dir."functions.php");
 include_once($include_dir."Helper\path_handler.php");
 // url for process_add.php
 $process_add = return_project_path()."Actions\Add\process_add.php";
-$vehicle_found =return_project_path()."Entities\Vehicle\vehicle_found.php";
+$vehicle_found =return_project_path()."Entities\Vehicle\\vehicle_found.php";
 ?>
 
 <?php
@@ -47,7 +47,7 @@ if (isset($_GET["search"])) {
 				/* add header to get the result: i.e. id for getting car information
 				 * num for display header if vehicle is found through search engine
 				*/
-				header("location:vehicle_found.php?id=$id&num=1");
+				header("location:$vehicle_found?id=$id&num=1");
 			} else {
 			   // if no car is found, not possible two have 2 cars since licence is set as unique
 			   echo "Vehicle ". $plate. " not found!";
