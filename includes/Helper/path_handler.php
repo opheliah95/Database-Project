@@ -30,4 +30,9 @@
          return $full_path;
      }
 
+     function return_project_path()
+     {
+         return PROJ_PATH;
+     }
+
 ?>

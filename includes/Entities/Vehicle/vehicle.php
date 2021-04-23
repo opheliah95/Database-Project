@@ -2,12 +2,14 @@
 // get include path
 $parent_folder = "Entities";
 $include_dir = explode($parent_folder, __DIR__)[0];
-$process_add = $include_dir. "Actions/Add/process_add.php";
 ?>
 
 <?php
-// includes function file
-include($include_dir."functions.php");
+// includes function file and path_handler
+include_once($include_dir."functions.php");
+include_once($include_dir."Helper\path_handler.php");
+// url for process_add.php
+$process_add = return_project_path()."Actions\Add\process_add.php";
 ?>
 
 <?php
@@ -57,13 +59,11 @@ if (isset($_GET["search"])) {
 		echo "Error message here";
 }
 ?>
+
 <br>
 <br>
 
-<?php
-	echo "<form method = 'GET' action = $process_add>";
-?>
-
+<form method = 'GET' action = <?php echo $process_add?>>
 <input type = "submit" name = "vehicle" value = "Add new vehicle">
 <input type = "submit" name = "cancel" value = "Cancel">
 </form>
