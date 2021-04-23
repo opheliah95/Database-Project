@@ -33,7 +33,9 @@ if (isset($_GET["driver"])) {
 
 // if user search by  vehicle
 elseif(isset($_GET["vehicle"])) {
-	include("vehicle.php");
+	$report_path_rel = "Entities/Vehicle/vehicle.php";
+	$report_path_abs = generate_path_comm($report_path_rel);
+	include($report_path_abs);
 }
 
 
