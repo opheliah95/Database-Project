@@ -16,7 +16,12 @@
         return root_path;
     }
 
-
-
+    // normal generate path function
+    function generate_path_comm($path)
+    {
+        $full_path = ROOT_PATH.BACKSLASH.$path;
+        return $full_path;
+    }
+    
 
 ?>
