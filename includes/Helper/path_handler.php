@@ -1,10 +1,7 @@
 <?php
 
     // a script that will handle all paths
-
-    // consts values 
-    define("ROOT_PATH", __DIR__);
-    define("SPACE", " ");
+    include_once("const_handler.php");
  
     // return custom path
     function generate_path($path)
