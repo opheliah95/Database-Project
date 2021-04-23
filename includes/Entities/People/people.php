@@ -1,4 +1,16 @@
 <?php
+// get include path
+$parent_folder = "Entities";
+$include_dir = explode($parent_folder, __DIR__)[0];
+?>
+
+<?php
+// includes path_handler and path url
+include_once($include_dir."Helper\path_handler.php");
+$people_found =return_project_path()."Entities\People\people_found.php";
+?>
+
+<?php
 if (isset($_GET["search"])) {
 		
 		// if search box is empty
@@ -14,7 +26,7 @@ if (isset($_GET["search"])) {
 				$people_id = $rows["People_ID"];
 				echo "<li>
 					 &nbsp;&nbsp;&nbsp; 				
-					 <a href = 'people_found.php?id=$people_id'>" .$rows["People_Name"]. "</a>";
+					 <a href = '$people_found?id=$people_id'>" .$rows["People_Name"]. "</a>";
 				echo  "(". $rows["People_Address"]. ")"."</li>";
 			}
 			echo "</ul>";
@@ -42,7 +54,7 @@ if (isset($_GET["search"])) {
 				$rows = mysqli_fetch_assoc($result);
 				$people_id = $rows["People_ID"];
 				$count = $total_rows;
-				header("location:people_found.php?id=$people_id&num=$count");
+				header("location:$people_found?id=$people_id&num=$count");
 			}
 			elseif ($total_rows > 1) {
 				// get the list of results
@@ -50,7 +62,7 @@ if (isset($_GET["search"])) {
 				while ($rows = mysqli_fetch_assoc($result)) {
 					$people_id = $rows["People_ID"];
 					echo "<li>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href = 'people_found.php?id=$people_id'>"
+						<a href = '$people_found?id=$people_id'>"
 						.$rows["People_Name"]. "</a>";
 					echo  "(". $rows["People_Address"]. ")"."</li>";
 				}
