@@ -19,7 +19,7 @@
     // normal generate path function
     function generate_path_comm($path)
     {
-        $full_path = ROOT_PATH.BACKSLASH.$path;
+        $full_path = INCLUDE_PATH.$path;
         return $full_path;
     }
     
