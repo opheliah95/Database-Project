@@ -1,22 +1,21 @@
 <html>
-<head>
-<link rel="stylesheet" href="style.css">
-</head>
 
-<body>
 <?php
-include("database.php");
+// get include path
+$parent_folder = "Entities";
+$include_dir = explode($parent_folder, __DIR__)[0];
+
 ?>
 
 <?php
-session_start();
-include("header.php");
-?>
+// add helper path
+include_once($include_dir."Helper/connection_handler.php");
+//include session handler
+include($include_dir."Helper/session_handler.php");
 
-<?php
-// if session variables are destroyed
-if (!isset($_SESSION["user"]) || !isset($_SESSION["id"])) {
-	header("location:login.php");
+// check session
+if (check_session())
+{
 	exit;
 }
 ?>
@@ -86,7 +85,7 @@ else {
 
 ?>
 
-
+<body>
 <br>
 <br>
 <form method = "GET" action = "process_add.php">
