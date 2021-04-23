@@ -9,12 +9,11 @@ include("../header.php");
 ?>
 
 <?php
-// if session variables are destroyed
-if (!isset($_SESSION["user"]) || !isset($_SESSION["id"])) {
-	$session_error = "your current session has expired";
-	header("Location: ../login.php?error=session&error=$session_error");
+include("../Helper/session_handler.php");
+// if session variables are destroyed -- then leave the page
+if (check_session())
+{
 	exit;
-
 }
 ?>
 
