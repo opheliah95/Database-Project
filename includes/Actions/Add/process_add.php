@@ -22,7 +22,8 @@ if (check_session())
 <?php
 // check whether user pressed add buttons or cancels or they just open the page by accident
 if(isset($_GET["people"])) {
-	header("location:add_people.php");
+	$userpath = USER_DIR_PATH.USER_PAGE_PATH;
+	//header("location:".$userpath);
 }
 elseif(isset($_GET["vehicle"])) {
 	header("location:add_vehicle.php");
@@ -31,7 +32,8 @@ elseif(isset($_GET["report"])) {
 	echo "Welcome report";
 }
 elseif(isset($_GET["cancel"])) {
-	header("location:userpage.php");
+	$userpath = PROJ_PATH."User/userpage.php";
+	header("location: ".$userpath);
 }
 else {
 	echo '<html>

@@ -23,5 +23,11 @@
         return $full_path;
     }
     
+     // normal generate path function
+     function relative_path($path)
+     {
+         $full_path = INCLUDE_PATH.$path;
+         return $full_path;
+     }
 
 ?>
