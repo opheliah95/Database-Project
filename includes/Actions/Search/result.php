@@ -1,15 +1,10 @@
 <html>
 
 <?php
-include("../dbconnection.php");
-session_start();
-include("../header.php");
-?>
-
-<?php
-// if session variables are destroyed
-if (!isset($_SESSION["user"]) || !isset($_SESSION["id"])) {
-	header("location:../login.php");
+include_once("../Helper/connection_handler.php");
+// check session
+if (check_session())
+{
 	exit;
 }
 ?>
