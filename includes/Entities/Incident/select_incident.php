@@ -4,6 +4,7 @@
 // get include path
 $parent_folder = "Admin";
 $include_dir = explode($parent_folder, __DIR__)[0];
+$self = $_SERVER['PHP_SELF'];
 ?>
 
 <?php
@@ -40,7 +41,7 @@ if ($_SESSION["role"] == "admin") {
 	$txt = trim(isset($_GET["words"])?$_GET["words"]: "");
 	$report = trim(isset($_GET["inci"])?$_GET["inci"]: "");
 	
-	echo "<form action = 'select_incident.php?' method = 'GET'>";
+	echo "<form action = $self method = 'GET'>";
 	echo "Search driver or driver licence: ";
 	echo "&nbsp;&nbsp;"; 
 	echo "<input type = 'text' name = 'search' placeholder = 'Search...' size = '35'>";

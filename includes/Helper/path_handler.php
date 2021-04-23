@@ -30,9 +30,16 @@
          return $full_path;
      }
 
+     // return project path: /[PROJName]/[Dir]/[Dir]
      function return_project_path()
      {
          return PROJ_PATH;
+     }
+
+     // return project path: /[PROJName]/[Dir]/[Dir]
+     function return_url_path($path)
+     {
+         return PROJ_PATH.$path;
      }
 
 ?>

@@ -14,8 +14,8 @@ include_once($include_dir."functions.php");
 include_once($include_dir."Helper/path_handler.php");
 // directory path for process_add.php
 $add_fine_path = "Actions/Add/process_fine.php";
-$process_fine = $include_dir.$add_fine_path;
-echo $process_add;
+$process_fine = realpath($include_dir.$add_fine_path);
+echo $process_fine;
 ?>
 
 <?php
