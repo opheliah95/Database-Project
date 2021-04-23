@@ -21,6 +21,14 @@ if (check_session())
 ?>
 
 <?php
+// includes path_handler
+include_once($include_dir."Helper\path_handler.php");
+// url for process_add.php
+$process_add = return_project_path()."Actions\Add\process_add.php";
+$vehicle_found =return_project_path()."Entities\Vehicle\\vehicle_found.php";
+?>
+
+<?php
 if (isset($_GET['num'])) {
 	echo $_GET['num']. " people found";
 	echo "<br><br>";
@@ -61,7 +69,7 @@ if (isset($_GET['id'])) {
 				  Vehicle: " .$rows["Vehicle_Colour"]. ", ";
 			echo  $rows["Vehicle_Type"]. "  ";
 			echo  "(";
-			echo "<a href = 'vehicle_found.php?id=$id'>".$rows["Vehicle_Licence"]. "</a>";
+			echo "<a href = $vehicle_found?id=$id'>".$rows["Vehicle_Licence"]. "</a>";
 			echo ") </li>";
 			}
 			echo "</ul>";
@@ -88,7 +96,7 @@ else {
 <body>
 <br>
 <br>
-<form method = "GET" action = "../../Actions/Add/process_add.php">
+<form method = "GET" action = <?php $process_add?>>
 <input type = "submit" name = "people" value = "Add new people">
 <input type = "submit" name = "cancel" value = "Cancel">
 </form>
