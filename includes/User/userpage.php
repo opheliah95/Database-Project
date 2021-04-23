@@ -52,7 +52,7 @@ if ($_SESSION["role"] == "admin") {
 
 // add fines
 if ($_SESSION["role"] == "admin") {
-	echo "<form action = 'addfine.php' method = 'GET' class = 'bt2'>";
+	echo "<form action = '../Admin/addfine.php' method = 'GET' class = 'bt2'>";
 	echo "<input type = 'submit' name = 'addfine' value = 'Add fines'>";
 	echo "</form>";
 }
