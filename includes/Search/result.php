@@ -17,7 +17,7 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["id"])) {
 <?php
 // if user search by driver
 if (isset($_GET["driver"])) {
-	include("people.php");
+	include("../Entities/People/people.php");
 }
 
 
