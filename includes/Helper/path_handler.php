@@ -2,14 +2,14 @@
 
     // a script that will handle all paths
 
-    // consts values
-    $root_path = __DIR__;
-    $space = " ";  
-
+    // consts values 
+    define("ROOT_PATH", __DIR__);
+    define("SPACE", " ");
+ 
     // return custom path
     function generate_path($path)
     {
-        $full_path = $root_path.$space.$path;
+        $full_path = ROOT_PATH.SPACE.$path;
         return $full_path;
     }
 
