@@ -10,6 +10,7 @@ include_once($include_dir."functions.php");
 include_once($include_dir."Helper\path_handler.php");
 // url for process_add.php
 $process_add = return_project_path()."Actions\Add\process_add.php";
+$vehicle_found =return_project_path()."Entities\Vehicle\vehicle_found.php";
 ?>
 
 <?php
@@ -26,7 +27,7 @@ if (isset($_GET["search"])) {
 				$id = $rows["Vehicle_ID"];
 				echo "<li>";
 				echo "&nbsp;&nbsp;&nbsp;";
-				echo "<a href ='vehicle_found.php?id=$id'>".$rows["Vehicle_Licence"]. "</a>";
+				echo "<a href ='$vehicle_found?id=$id'>".$rows["Vehicle_Licence"]. "</a>";
 				echo ": ". $rows["Vehicle_Colour"];
 				echo ", ". $rows["Vehicle_Type"];
 				echo "</li>";
