@@ -11,13 +11,15 @@ $include_dir = explode($parent_folder, __DIR__)[0];
 include_once("../Helper/connection_handler.php");
 // includes function file and path_handler
 include_once($include_dir."functions.php");
-include_once($include_dir."Helper\path_handler.php");
-// url for process_add.php
-$process_add = return_project_path()."Actions\Add\process_add.php";
+include_once($include_dir."Helper/path_handler.php");
+// directory path for process_add.php
+$add_fine_path = "Actions/Add/process_fine.php";
+$process_fine = $include_dir.$add_fine_path;
+echo $process_add;
 ?>
 
 <?php
-include("../Helper/session_handler.php");
+include_once("../Helper/session_handler.php");
 // if session variables are destroyed -- then leave the page
 if (check_session())
 {
@@ -84,7 +86,7 @@ if (check_session())
 ?>
 
 <?php
-	include($process_add); // add fine 
+	include($process_fine); // add fine 
 ?>
 </body>
 </html>

@@ -9,7 +9,7 @@ $include_dir = explode($parent_folder, __DIR__)[0];
 // add helper path
 include_once($include_dir."Helper/connection_handler.php");
 //include session handler
-include($include_dir."Helper/session_handler.php");
+include_once($include_dir."Helper/session_handler.php");
 
 // check session
 if (check_session())
