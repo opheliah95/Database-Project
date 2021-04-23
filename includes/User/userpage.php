@@ -23,7 +23,7 @@ include("../functions.php");
 ?>
 
 <body>
-<form action = "result.php" method = "GET" class = "bt1">
+<form action = "../Search/result.php" method = "GET" class = "bt1">
 Enter search term: <input type = "text" name = "search" placeholder= "Search..." size = "35">
 <input type = "submit" name = "driver" value = "Driver">
 <input type = "submit" name = "vehicle" value = "Vehicle">
